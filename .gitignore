@@ -1,0 +1,25 @@
+# Python & Virtual Environments
+venv/
+backend/venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.sqlite3
+.env
+backend/.env
+
+# Node.js & Next.js
+node_modules/
+frontend/node_modules/
+.next/
+frontend/.next/
+out/
+build/
+dist/
+
+# Logs & OS artifacts
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
