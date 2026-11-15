@@ -193,7 +193,7 @@ export default function SignalStackApp() {
   const [showAuditModal, setShowAuditModal] = useState(false);
   const [copiedMarkdown, setCopiedMarkdown] = useState(false);
 
-  const API_URL = "http://localhost:8000/api/v1";
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://founderbrief-z22s.onrender.com/api/v1";
 
   // Check if existing companies exist on load
   useEffect(() => {
@@ -299,7 +299,7 @@ export default function SignalStackApp() {
       await loadSources(newCompany.id);
       setActiveTab("interview");
     } catch (err: any) {
-      alert(`Setup error: ${err.message}. Make sure backend is running on http://localhost:8000`);
+      alert(`Setup error: ${err.message}. If the backend is waking up from idle on Render free-tier, please wait 20-30 seconds and retry.`);
     } finally {
       setLoading(false);
       setLoadingStep("");
